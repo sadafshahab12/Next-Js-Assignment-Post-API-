@@ -25,6 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+
       </head>
       <body className={`${poppins.className} antialiased`}>
         <Navbar />
