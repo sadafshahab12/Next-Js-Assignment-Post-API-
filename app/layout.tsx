@@ -4,6 +4,7 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { SessionWrapper } from "./components/SessionWrapper";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -27,11 +28,13 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.png" type="image/png" />
 
       </head>
-      <body className={`${poppins.className} antialiased`}>
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
+      <SessionWrapper>
+        <body className={`${poppins.className} antialiased`}>
+          <Navbar />
+          {children}
+          <Footer />
+        </body>
+      </SessionWrapper>
     </html>
   );
 }
